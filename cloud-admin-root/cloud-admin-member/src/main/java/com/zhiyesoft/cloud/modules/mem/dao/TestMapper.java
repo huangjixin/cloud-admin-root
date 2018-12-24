@@ -1,19 +1,20 @@
 package com.zhiyesoft.cloud.modules.mem.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
+import com.zhiyesoft.cloud.basic.core.mapper.BaseMapper;
 import com.zhiyesoft.cloud.modules.mem.domain.Test;
-
-import java.util.List;
 
 /**
  * Created by lorne on 2017/6/28.
  */
 @Mapper
-public interface TestMapper {
+public interface TestMapper extends BaseMapper<Test> {
 
 
     @Select("SELECT * FROM T_TEST")
