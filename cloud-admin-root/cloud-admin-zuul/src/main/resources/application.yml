@@ -1,0 +1,39 @@
+server:
+  port: 8760
+spring:
+  application:
+    name: gateway-service-zuul
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+    hostname: ${spring.cloud.client.ipAddress}
+    lease-renewal-interval-in-seconds: 60
+    lease-expiration-duration-in-seconds: 120   
+##2.0版本的应该为spring.cloud.client.ip-address
+
+zuul:
+    sensitive-headers: null
+    host:
+        connect-timeout-millis: 60000
+        socket-timeout-millis:  60000
+    retryable: false
+            
+#ribbon:
+#  ReadTimeout: 60000
+#  SocketTimeout: 60000
+#  NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+#  MaxAutoRetriesNextServer: 0          
+#hystrix:
+#    command:
+#        default:
+#            execution:
+#                timeout:
+#                    enabled: true
+#                isolation:
+#                    thread:
+#                        timeoutInMilliseconds: 60000 
