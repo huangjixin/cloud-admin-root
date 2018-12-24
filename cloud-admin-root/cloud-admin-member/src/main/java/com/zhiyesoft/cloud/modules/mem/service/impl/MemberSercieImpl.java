@@ -24,7 +24,7 @@ public class MemberSercieImpl implements IMemberService {
 	public int save() {
 		int result = testMapper.save("member service");
 		systemClient.save();
-//		int s = 10/0;
+		int s = 10/0;
 		return result;
 	}
 

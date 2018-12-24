@@ -53,6 +53,7 @@
 		<module>cloud-admin-server</module>
 		<module>cloud-admin-zuul</module>
 		<module>cloud-admin-tx-manager</module>
+		<module>cloud-core</module>
 		<module>cloud-admin-system</module>
 		<module>cloud-admin-member</module>
 	</modules>
